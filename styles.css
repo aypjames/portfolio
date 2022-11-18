@@ -1,22 +1,43 @@
 * {
   font-family: Arial, Helvetica, sans-serif;
-  scroll-behavior: smooth; }
+  scroll-behavior: smooth;
+  background-color: #f9f7f7;
+  color: #112d4e; }
 
-header {
-  margin-bottom: 60px; }
+body {
+  margin: 0 20px; }
 
 navigation > ul {
   list-style: none; }
 
-.navigationBar {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around; }
+.navBar {
+  position: sticky;
+  top: 0px; }
+  .navBar__group {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    background-color: #f9f7f7;
+    padding: 10px 0;
+    margin: 0;
+    border-bottom: 1px solid #d8d8d8; }
+  .navBar a {
+    padding: 6px;
+    text-decoration: none; }
+  .navBar a:hover {
+    background-color: #ececec;
+    border-radius: 5px; }
+
+header {
+  margin-bottom: 60px; }
 
 .card {
   margin-bottom: 40px; }
+  .card h2 {
+    color: #f07b3f; }
 
-.card > h2 {
-  color: blueviolet; }
+.card-table {
+  display: flex;
+  justify-content: space-around; }
 
 /*# sourceMappingURL=styles.css.map */

@@ -9,6 +9,12 @@ $background-color: #f9f7f7;
   color: $primary-text-color;
 }
 
+button:hover {
+  background-color: $primary-text-color;
+  color: white;
+  border-radius: 50px;
+}
+
 body {
   margin: 0 20px;
 }
@@ -40,10 +46,6 @@ navigation > ul {
     background-color: #ececec;
     border-radius: 5px;
   }
-}
-
-header {
-  margin-bottom: 60px;
 }
 
 .card {

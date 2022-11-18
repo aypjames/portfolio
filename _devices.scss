@@ -1,0 +1,32 @@
+// https://getbootstrap.com/docs/5.0/layout/breakpoints/
+
+$xs: 0;
+$sm: 576px;
+$md: 768px;
+$lg: 992px;
+$xl: 1200px;
+$xxl: 1400px;
+
+@mixin phone {
+  @media only screen and (max-width: $sm) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media only screen and (min-width: ($sm + 1)) and (max-width: $md) {
+    @content;
+  }
+}
+
+@mixin tablet-landscape {
+  @media only screen and (min-width: ($md + 1)) and (max-width: $lg) {
+    @content;
+  }
+}
+
+@mixin laptop {
+  @media only screen and (min-width: ($lg + 1)) and (max-width: $xl) {
+    @content;
+  }
+}

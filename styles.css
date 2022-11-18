@@ -8,18 +8,12 @@ body {
   background-color: #f0f5f9;
   color: #152f46;
   height: 100vh;
-  width: 100wd;
-}
-
-navigation {
-  position: relative;
 }
 
 .navBar {
-  position: -webkit-sticky;
-  position: sticky;
+  position: fixed;
+  width: 100vw;
   top: 0;
-  display: block;
 }
 .navBar > ul {
   list-style: none;
@@ -44,7 +38,6 @@ navigation {
 }
 
 .card {
-  margin-bottom: 40px;
   padding: 40px 30px;
   border-bottom: 1px solid #d8d8d8;
 }
@@ -56,6 +49,7 @@ navigation {
 }
 .card h2 {
   text-align: center;
+  color: lightgrey;
 }
 
 .card-table {
@@ -64,20 +58,50 @@ navigation {
   align-items: flex-start;
   flex-wrap: wrap;
 }
-.card-tablecard-table--projects {
-  justify-content: flex-end;
+.card-table--projects {
+  justify-content: space-between;
+}
+@media only screen and (min-width: 993px) and (max-width: 1200px) {
+  .card-table--projects {
+    justify-content: center;
+  }
+}
+@media only screen and (min-width: 577px) and (max-width: 768px) {
+  .card-table--projects {
+    justify-content: center;
+  }
+}
+@media only screen and (max-width: 576px) {
+  .card-table--projects {
+    justify-content: center;
+  }
 }
 .card-table__item--projects {
   border: 1px solid #d8d8d8;
-  background-color: white;
   border-radius: 5px;
   padding: 1.5%;
   margin: 1.5%;
   text-align: center;
 }
+@media only screen and (max-width: 576px) {
+  .card-table__item--projects {
+    width: 100vw;
+    padding-bottom: 4%;
+  }
+}
+@media only screen and (min-width: 577px) and (max-width: 768px) {
+  .card-table__item--projects {
+    width: 100vw;
+    padding-bottom: 4%;
+  }
+}
 .card-table__item--projects > img {
   border: 1px solid #d8d8d8;
   border-radius: 5px;
+}
+.card-table__item--projects:hover {
+  background-color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .card-button {
@@ -93,7 +117,7 @@ navigation {
   background-color: #7fe0e1;
 }
 .card-button--secondary {
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0);
   border: 1px solid #46cdcf;
   color: #38a0a2;
 }

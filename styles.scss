@@ -1,62 +1,102 @@
-$primary-h2-color: #f07b3f;
-$primary-text-color: #112d4e;
-$background-color: #f9f7f7;
+$primary-h2-color: #2762bb;
+$primary-text-color: #152f46;
+$primary-background-color: #f0f5f9;
+$secondary-background-color: #61c0bf;
+$highlight-color: #38a0a2;
+$primary-buttons-color: #46cdcf;
+$primary-hover-buttons-color: #7fe0e1;
+$secondary-buttons-color: #f0f5f9;
+$secondary-hover-buttons-color: #e9eef3;
+$primary-bottom-border-color: #d8d8d8;
 
 * {
   font-family: Arial, Helvetica, sans-serif;
   scroll-behavior: smooth;
-  background-color: $background-color;
-  color: $primary-text-color;
-}
-
-button:hover {
-  background-color: $primary-text-color;
-  color: white;
-  border-radius: 50px;
+  transition: ease all 0.5s;
 }
 
 body {
-  margin: 0 20px;
-}
-
-navigation > ul {
-  list-style: none;
+  background-color: $primary-background-color;
+  color: $primary-text-color;
+  height: 100vh;
+  width: 100wd;
 }
 
 .navBar {
   position: sticky;
   top: 0px;
 
+  & > ul {
+    list-style: none;
+  }
+
   &__group {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    background-color: $background-color;
+    background-color: $primary-background-color;
     padding: 10px 0;
     margin: 0;
-    border-bottom: 1px solid #d8d8d8;
+    border-bottom: 1px solid $primary-bottom-border-color;
   }
 
   & a {
     padding: 6px;
     text-decoration: none;
+    color: $primary-text-color;
   }
 
   & a:hover {
-    background-color: #ececec;
-    border-radius: 5px;
+    background-color: $primary-hover-buttons-color;
+    border-radius: 4px;
   }
 }
 
 .card {
   margin-bottom: 40px;
+  padding: 40px 30px;
+  border-bottom: 1px solid $primary-bottom-border-color;
+
+  &--leading {
+    background-color: $secondary-background-color;
+
+    color: white;
+    border-radius: 5px;
+    height: 300px;
+  }
 
   & h2 {
-    color: $primary-h2-color;
+    text-align: center;
   }
 }
 
 .card-table {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.card-button {
+  padding: 10px;
+  border-radius: 5px;
+  border: 0px;
+
+  &--primary {
+    background-color: $primary-buttons-color;
+  }
+
+  &--primary:hover {
+    background-color: $primary-hover-buttons-color;
+  }
+
+  &--secondary {
+    background-color: $secondary-buttons-color;
+    border: 1px solid $primary-buttons-color;
+    color: $highlight-color;
+  }
+
+  &--secondary:hover {
+    background-color: $secondary-hover-buttons-color;
+  }
 }

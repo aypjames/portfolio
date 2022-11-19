@@ -1,18 +1,24 @@
 * {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Open Sans", sans-serif;
   scroll-behavior: smooth;
-  transition: ease all 0.5s;
+}
+
+h1,
+h2,
+h4 {
+  font-family: "Montserrat", sans-serif;
 }
 
 body {
-  background-color: #f0f5f9;
-  color: #152f46;
+  background-color: white;
+  color: #1a1919;
   height: 100vh;
+  margin: 0;
 }
 
 .navBar {
   position: fixed;
-  width: 100vw;
+  width: 100%;
   top: 0;
 }
 .navBar > ul {
@@ -22,34 +28,64 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  background-color: #f0f5f9;
+  background-color: white;
   padding: 10px 0;
   margin: 0;
-  border-bottom: 1px solid #d8d8d8;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 .navBar a {
   padding: 6px;
   text-decoration: none;
-  color: #152f46;
+  color: #1a1919;
 }
 .navBar a:hover {
-  background-color: #7fe0e1;
-  border-radius: 4px;
+  border-bottom: 4px solid rgb(0, 61, 43);
 }
 
 .card {
+  min-height: 50vh;
   padding: 40px 30px;
   border-bottom: 1px solid #d8d8d8;
 }
-.card--leading {
-  background-color: #61c0bf;
-  color: white;
-  border-radius: 5px;
-  height: 300px;
-}
 .card h2 {
-  text-align: center;
-  color: lightgrey;
+  color: rgb(0, 61, 43);
+}
+@media only screen and (min-width: 577px) and (max-width: 768px) {
+  .card h2 {
+    text-align: center;
+  }
+}
+@media only screen and (max-width: 576px) {
+  .card h2 {
+    text-align: center;
+  }
+}
+.card--primary {
+  color: rgb(173, 230, 185);
+  background-color: rgb(0, 61, 43);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.card--primary h1 {
+  font-size: 400%;
+  margin-bottom: 10px;
+}
+.card--primary h2 {
+  color: rgb(173, 230, 185);
+}
+.card--primary > p {
+  margin-top: 5px;
+  margin-bottom: 0;
+}
+.card--secondary {
+  background-color: rgb(245, 245, 245);
+}
+.card--tertiary {
+  background-color: rgb(255, 255, 255);
+}
+.card--footer {
+  background-color: rgb(173, 230, 185);
 }
 
 .card-table {
@@ -59,7 +95,7 @@ body {
   flex-wrap: wrap;
 }
 .card-table--projects {
-  justify-content: space-between;
+  justify-content: flex-start;
 }
 @media only screen and (min-width: 993px) and (max-width: 1200px) {
   .card-table--projects {
@@ -77,11 +113,17 @@ body {
   }
 }
 .card-table__item--projects {
+  transition: ease all 0.5s;
   border: 1px solid #d8d8d8;
   border-radius: 5px;
-  padding: 1.5%;
   margin: 1.5%;
-  text-align: center;
+  background-color: rgba(0, 0, 0, 0);
+}
+.card-table__item--projects h4 {
+  color: rgb(0, 61, 43);
+}
+.card-table__item--projects p {
+  color: grey;
 }
 @media only screen and (max-width: 576px) {
   .card-table__item--projects {
@@ -95,32 +137,71 @@ body {
     padding-bottom: 4%;
   }
 }
-.card-table__item--projects > img {
-  border: 1px solid #d8d8d8;
-  border-radius: 5px;
-}
 .card-table__item--projects:hover {
-  background-color: white;
+  transition: ease all 0.5s;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.table-item__img > img {
+  background-size: cover;
+}
+@media only screen and (max-width: 576px) {
+  .table-item__img > img {
+    width: 80vw;
+  }
+}
+@media only screen and (min-width: 577px) and (max-width: 768px) {
+  .table-item__img > img {
+    width: 80vw;
+  }
+}
+
+.table-item__content {
+  padding: 1.5%;
+  margin: 1.5%;
 }
 
 .card-button {
   padding: 10px;
-  border-radius: 5px;
   border: 0px;
 }
 .card-button--primary {
-  background-color: #46cdcf;
-  color: #152f46;
+  background-color: rgb(0, 61, 43);
+  border: 0.5px solid rgb(0, 61, 43);
+  border-radius: 5px;
+  color: white;
 }
 .card-button--primary:hover {
-  background-color: #7fe0e1;
+  background-color: rgb(0, 96, 67);
 }
 .card-button--secondary {
-  background-color: rgba(255, 255, 255, 0);
-  border: 1px solid #46cdcf;
-  color: #38a0a2;
+  background-color: rgba(0, 0, 0, 0);
+  border-radius: 5px;
+  border: 0.5px solid rgb(0, 61, 43);
+  color: #1a1919;
 }
 .card-button--secondary:hover {
-  background-color: #f0f5f9;
+  background-color: rgb(245, 245, 245);
+}
+
+.socialsPill {
+  display: flex;
+}
+.socialsPill__content {
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0);
+  border-radius: 5px;
+  width: 80px;
+  margin-right: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid rgb(0, 61, 43);
+}
+.socialsPill__content > a {
+  color: #1a1919;
+  text-decoration: none;
+}
+.socialsPill__content:hover {
+  background-color: rgba(255, 255, 255, 0.1);
 }

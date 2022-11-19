@@ -1,4 +1,4 @@
-const greetings = ["G'day!", "Ahoy!", "Hello!", "Hey there!"];
+const greetings = ["G'day!", "Ahoy!", "Hello!", "Hiya!"];
 
 function randGreeting() {
   // gets a random whole number between 0 and the length of the greetings array

@@ -1,21 +1,30 @@
 @use "./devices";
 @import "./_colorPalettes.scss";
 
+$header-font: "Montserrat", sans-serif;
+$general-font: "Open Sans", sans-serif;
+
 * {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: $general-font;
   scroll-behavior: smooth;
-  transition: ease all 0.5s;
+}
+
+h1,
+h2,
+h4 {
+  font-family: $header-font;
 }
 
 body {
   background-color: $primary-background-color;
   color: $primary-text-color;
   height: 100vh;
+  margin: 0;
 }
 
 .navBar {
   position: fixed;
-  width: 100vw;
+  width: 100%;
   top: 0;
 
   & > ul {
@@ -26,10 +35,10 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    background-color: $primary-background-color;
+    background-color: $navbar-background-color;
     padding: 10px 0;
     margin: 0;
-    border-bottom: 1px solid $primary-border-color;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   }
 
   & a {
@@ -39,25 +48,59 @@ body {
   }
 
   & a:hover {
-    background-color: $primary-hover-buttons-color;
-    border-radius: 4px;
+    border-bottom: 4px solid $navbar-bottom-color;
   }
 }
 
 .card {
+  min-height: 50vh;
   padding: 40px 30px;
   border-bottom: 1px solid $primary-border-color;
 
-  &--leading {
-    background-color: $secondary-background-color;
-    color: white;
-    border-radius: 5px;
-    height: 300px;
+  & h2 {
+    color: $primary-card-color;
+
+    @include devices.tablet {
+      text-align: center;
+    }
+
+    @include devices.phone {
+      text-align: center;
+    }
   }
 
-  & h2 {
-    text-align: center;
-    color: lightgrey;
+  &--primary {
+    color: $primary-h1-color;
+    background-color: $primary-card-color;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    & h1 {
+      font-size: 400%;
+      margin-bottom: 10px;
+    }
+
+    & h2 {
+      color: $primary-h1-color;
+    }
+
+    & > p {
+      margin-top: 5px;
+      margin-bottom: 0;
+    }
+  }
+
+  &--secondary {
+    background-color: $secondary-card-color;
+  }
+
+  &--tertiary {
+    background-color: $tertiary-card-color;
+  }
+
+  &--footer {
+    background-color: $footer-card-color;
   }
 }
 
@@ -68,7 +111,7 @@ body {
   flex-wrap: wrap;
 
   &--projects {
-    justify-content: space-between;
+    justify-content: flex-start;
 
     @include devices.laptop {
       justify-content: center;
@@ -84,11 +127,19 @@ body {
   }
 
   &__item--projects {
+    transition: ease all 0.5s;
     border: 1px solid $primary-border-color;
     border-radius: 5px;
-    padding: 1.5%;
     margin: 1.5%;
-    text-align: center;
+    background-color: rgba(0, 0, 0, 0);
+
+    & h4 {
+      color: $primary-card-color;
+    }
+
+    & p {
+      color: grey;
+    }
 
     @include devices.phone {
       width: 100vw;
@@ -100,27 +151,41 @@ body {
       padding-bottom: 4%;
     }
 
-    & > img {
-      border: 1px solid $primary-border-color;
-      border-radius: 5px;
-    }
-
     &:hover {
-      background-color: white;
+      transition: ease all 0.5s;
       box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
         0 6px 20px 0 rgba(0, 0, 0, 0.19);
     }
   }
 }
 
+.table-item__img {
+  & > img {
+    background-size: cover;
+
+    @include devices.phone {
+      width: 80vw;
+    }
+
+    @include devices.tablet {
+      width: 80vw;
+    }
+  }
+}
+.table-item__content {
+  padding: 1.5%;
+  margin: 1.5%;
+}
+
 .card-button {
   padding: 10px;
-  border-radius: 5px;
   border: 0px;
 
   &--primary {
     background-color: $primary-buttons-color;
-    color: $primary-text-color;
+    border: 0.5px solid $primary-border-buttons-color;
+    border-radius: 5px;
+    color: white;
   }
 
   &--primary:hover {
@@ -128,12 +193,44 @@ body {
   }
 
   &--secondary {
-    background-color: rgba(255, 255, 255, 0);
-    border: 1px solid $primary-buttons-color;
-    color: $highlight-color;
+    background-color: rgba(0, 0, 0, 0);
+    border-radius: 5px;
+    border: 0.5px solid $secondary-border-buttons-color;
+    color: $primary-text-color;
   }
 
   &--secondary:hover {
     background-color: $secondary-hover-buttons-color;
+  }
+}
+
+.socialsPill {
+  display: flex;
+  &__content {
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0);
+    border-radius: 5px;
+    width: 80px;
+    margin-right: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid $primary-card-color;
+
+    & > a {
+      color: $primary-text-color;
+      text-decoration: none;
+    }
+
+    // & > img {
+    //   width: 20px;
+    //   height: 20px;
+    //   margin-right: 10px;
+    //   background-color: white;
+    // }
+
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+    }
   }
 }

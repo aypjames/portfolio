@@ -56,6 +56,9 @@ body {
   min-height: 50vh;
   padding: 40px 30px;
   border-bottom: 1px solid $primary-border-color;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 
   & h2 {
     color: $primary-card-color;

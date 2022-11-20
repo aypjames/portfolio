@@ -15,8 +15,10 @@ Through this project, I was able to practice the following:
 
 #### User Interaction
 
-- Identifies user location and time using IP address
-- Stores and retrieves name and page visit information to browser (local storage)
+<!-- - Identifies user location and time using IP address
+- Stores and retrieves name and page visit information to browser (local storage) -->
+
+- Random greeting at the top of the page.
 
 ## Challenges and Learnings
 
@@ -34,8 +36,8 @@ Through this project, I was able to practice the following:
 - [x] In the repo you will also need a README.md with a short intro to the project.
 - [x] You are to use SCSS for styling.
 - [x] You are to use B.E.M as a naming convention.
-- [] !!! Responsiveness is vital – use Grid, Flex, whatever you wish but the site must look good at all screen widths.
-  VERY CRITICAL! : You will need to make sure that your website looks good on phones, tablets and laptops (we will see Media Queries next week, docs to follow)
+- [x] !!! Responsiveness is vital – use Grid, Flex, whatever you wish but the site must look good at all screen widths.
+      VERY CRITICAL! : You will need to make sure that your website looks good on phones, tablets and laptops (we will see Media Queries next week, docs to follow)
 
 ### other requirements
 
